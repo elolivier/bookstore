@@ -1,0 +1,118 @@
+.header {
+	display: flex;
+	justify-content: space-between;
+}
+
+.logo {
+	width: 90px;
+  height: 90px;
+}
+
+/* ---- input ---- */
+
+input[type="text"] {
+  font-size: 20px;
+  text-align: center;
+}
+
+.search {
+	align-self: center;
+}
+
+/* ---- isotope ---- */
+.grid {
+  background: #DDD;
+  margin: 0 auto;
+  margin-bottom: 15px;
+}
+
+.image {
+	width: 196px;
+	height: 246px;
+}
+
+
+
+.grid-item {
+  float: left;
+  border: 2px solid;
+  border-color: red;
+}
+
+/*****************flip cards*****************/
+.flip-container {
+  -webkit-perspective: 1000;
+  -moz-perspective: 1000;
+  -o-perspective: 1000;
+  perspective: 1000;
+  margin: 0;
+}
+
+.flip-container:hover .flipper,  
+.flip-container.hover .flipper {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+
+.flip-container {
+  width: 200px;
+  height: 250px;
+  font-size: 11px;
+  text-align: justify;
+}
+
+.flipper {
+  -webkit-transition: 0.6s;
+  -webkit-transform-style: preserve-3d;
+  -moz-transition: 0.6s;
+  -moz-transform-style: preserve-3d; 
+  -o-transition: 0.6s;
+  -o-transform-style: preserve-3d;
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.front, .back {
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+  position: absolute;
+}
+
+.back {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  background: #7A8E8E;
+  height: 246px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 5px;
+}
+
+#buttons {
+  font-size: 8px;
+  text-align: center;
+}
+
+.col-xs-5 {
+  float: none;
+  padding: 0;
+}
+
+.pull-bottom-r {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+.pull-bottom-l {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
