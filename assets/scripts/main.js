@@ -49,16 +49,27 @@ function uploadBooks(books) {
     var divBook = '';
     divBook += '<div class="flip-container grid-item"><div class="flipper">';
     
-    divBook += '<div class="front p-imagen"><a href="' + book.detalle + 
-    '" data-fancybox="group1" data-type="image"><img class="image" src="' + book.portada + '"/></a></div>';
+    divBook += '<div class="front"><img src="' + book.portada + '" alt="book cover"></div>';
     
     divBook += '<div class="back"><p><b>Title: </b>' + book.titulo + 
     '<br><b> Description: </b>' + book.descripcion + '</p>';
 
-    divBook += '<div id="buttons" class="row"><input id="more-info" class="col-xs-5 pull-bottom-l" type="submit" value="More info">';
-    divBook += '<input id="add-product" class="col-xs-5 pull-bottom-r" type="submit" value="Add To Cart"></div>';
+    divBook += '<div id="buttons" class="row"><a id=' + index + ' href="javascript:;" class="btn col-xs-5 pull-bottom-l">More info</a>';
+    divBook += '<input id="add-product" class="btn col-xs-5 pull-bottom-r" type="submit" value="Add To Cart"></div>';
 
     divBook += '</div></div></div>';
     $('.grid').append(divBook);
+    var id = '#'+index;
+    $(id).on('click', function() {
+      $.fancybox.open(
+        {
+          src  : book.detalle,
+          opts : {
+            caption : 'Title: ' + book.titulo + '. Description: ' + book.descripcion,
+            thumb   : book.detalle
+          }
+        }
+      );
+    });
   });
 }
